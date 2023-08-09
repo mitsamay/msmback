@@ -1,7 +1,7 @@
 import { Router } from "express";
 import {
   // getUsers,
-  // login,
+  login,
   register,
   // updateProfile,
   // updateStatus,
@@ -10,7 +10,7 @@ import {
 
 const userRouter = Router();
 userRouter.post("/register", register);
-// userRouter.post('/login', login);
+userRouter.post('/login', login);
 // userRouter.patch('/updateProfile', auth, updateProfile);
 // userRouter.get('/', getUsers);
 // userRouter.patch('/updateStatus/:userId', updateStatus);
