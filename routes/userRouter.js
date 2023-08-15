@@ -12,7 +12,7 @@ const userRouter = Router();
 userRouter.post("/register", register);
 userRouter.post('/login', login);
 userRouter.patch('/updateProfile', auth, updateProfile);
-// userRouter.get('/', getUsers);
+userRouter.get('/', getUsers);
 // userRouter.patch('/updateStatus/:userId', updateStatus);
 
 export default userRouter;

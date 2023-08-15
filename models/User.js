@@ -9,18 +9,19 @@ const userSchema = mongoose.Schema(
       max: 50,
       required: true,
       unique: true,
-      // trim: true,
+      trim: true,
     },
     password: { type: String, required: true },
     photoURL: { type: String, default: "" },
-    // role: {
-    //   type: 'String',
-    //   default: 'basic',
-    //   enum: ['basic', 'editor', 'admin'],
-    // },
-    // active: { type: Boolean, default: true },
+    // ກໍານົດສິດຜູ້ນໍາໃຊ້ຂໍ້ມູນ
+    role: {
+      type: 'String',
+      default: 'basic',
+      enum: ['basic', 'editor', 'admin'],
+    },
+    active: { type: Boolean, default: true },
   }
-  // { timestamps: true }
+  { timestamps: true }
 );
 
 const User = mongoose.model("users", userSchema);
