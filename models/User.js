@@ -13,7 +13,6 @@ const userSchema = mongoose.Schema(
     },
     password: { type: String, required: true },
     photoURL: { type: String, default: "" },
-    // ກໍານົດສິດຜູ້ນໍາໃຊ້ຂໍ້ມູນ
     role: {
       type: "String",
       default: "basic",

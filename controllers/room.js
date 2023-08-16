@@ -1,5 +1,5 @@
-import Room from "../models/Room.js";
-import tryCatch from "./utils/tryCatch.js";
+import Room from '../models/Room.js';
+import tryCatch from './utils/tryCatch.js';
 
 export const createRoom = tryCatch(async (req, res) => {
   const { id: uid, name: uName, photoURL: uPhoto } = req.user;
@@ -17,6 +17,16 @@ export const deleteRoom = tryCatch(async (req, res) => {
   const { _id } = await Room.findByIdAndDelete(req.params.roomId);
   res.status(200).json({ success: true, result: { _id } });
 });
+
+export const updateRoom = tryCatch(async (req, res) => {
+  const updatedRoom = await Room.findByIdAndUpdate(
+    req.params.roomId,
+    req.body,
+    { new: true }
+  );
+  res.status(200).json({ success: true, result: updatedRoom });
+});
+
 
 // Test ທົດສອບເບື້ອງຕົ້ນ
 // export const createRoom = async (req, res) => {

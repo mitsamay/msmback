@@ -28,18 +28,19 @@ app.use(express.json({ limit: "10mb" }));
 app.use("/user", userRouter);
 app.use("/room", roomRouter);
 // app.use('/deed', deedRouter);
-app.get("/", (req, res) => res.json({ message: "Welcome to our API" }));
+app.get("/", (req, res) => res.json({ message: "Welcome to Mitsamay API" }));
 app.use((req, res) =>
   res.status(404).json({ success: false, message: "Not Found" })
 );
 
 const startServer = async () => {
   try {
-    await mongoose.connect(process.env.MONGO_CONNECT); //connect to mongodb
-    app.listen(port, () => console.log(`Server is listening on port: ${port}`));
-    // .on('error', (e) => {
-    //   console.log('Error happened: ', e.message);
-    // });
+    await mongoose.connect(process.env.MONGO_CONNECT);  //connect to mongodb
+    app
+      .listen(port, () => console.log(`Server is listening on port: ${port}`))
+      .on("error", (e) => {
+        console.log("Error happened: ", e.message);
+      });
   } catch (error) {
     console.log(error);
   }
