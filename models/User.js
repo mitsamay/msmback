@@ -15,12 +15,12 @@ const userSchema = mongoose.Schema(
     photoURL: { type: String, default: "" },
     // ກໍານົດສິດຜູ້ນໍາໃຊ້ຂໍ້ມູນ
     role: {
-      type: 'String',
-      default: 'basic',
-      enum: ['basic', 'editor', 'admin'],
+      type: "String",
+      default: "basic",
+      enum: ["basic", "editor", "admin"],
     },
     active: { type: Boolean, default: true },
-  }
+  },
   { timestamps: true }
 );
 
