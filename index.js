@@ -5,9 +5,9 @@ import mongoose from "mongoose";
 import userRouter from "./routes/userRouter.js";
 
 //ສາມປະສານ Middleware
-// const morgan = require("morgan");
-// const bodyParser = require("body-parser");
-// const cors = require("cors");
+// import morgan from "morgan";
+// import bodyParser from "body-parser";
+// import cors from "cors";
 
 dotenv.config();
 
